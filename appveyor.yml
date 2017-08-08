@@ -1,0 +1,22 @@
+version: '{build}'
+
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - '%APPDATA%\npm-cache'
+  - '%USERPROFILE%\.electron'
+
+environment:
+  GH_TOKEN:
+      secure: oZ9C+1jN+Zmvvksj/ED3/ErV145shzM9D0YLZ5DAohl19LWVFsZCdpfeaMdXaYPt
+
+install:
+  - ps: Install-Product node 7.9.0 x64
+  - yarn install
+
+build_script:
+  - yarn run release:win
+
+test: off

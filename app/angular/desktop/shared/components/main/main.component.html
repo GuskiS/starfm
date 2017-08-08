@@ -1,0 +1,12 @@
+<div class="info__program" *ngIf="(program$ | async) as program">
+  <span *ngIf="program.djs" [innerHTML]="program.djs"></span>
+  <br *ngIf="program.djs" />
+
+  <span>{{ program.title }}</span>
+
+  <img [src]="program.image">
+</div>
+
+<div class="info__song" *ngIf="(song$ | async) as song">
+  <span>{{ song.artist }} - {{ song.song }}</span>
+</div>
